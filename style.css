@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(120deg, rgb(250, 201, 209), rgb(175, 212, 239));
+    color: white;
+    font-family: 'Lato', sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    align-items: center;
+}
+
+.title {
+    margin-bottom: 10vh;
+    font-size: 70px;
+}
+
+button {
+    background-color: rgb(180, 125, 231);
+    padding: 4px;
+    border-radius: 10px;
+    border: white;
+    color: white;
+}
+
+button:hover {
+    background-color: rgb(202, 169, 239);
+}
+
+.delete-button {
+    background-color: rgb(235, 108, 108);
+    width: 17px;
+    height: 17px;
+    padding: 0;
+}
+
+.delete-button:hover{
+    background-color: rgb(244, 154, 154);
+}
+
+input[type=text]{
+    background-color: honeydew;
+    border-radius: 10px;
+    border-color: honeydew;
+    padding: 3px;
+}
+
+input[type=text]:focus {
+    outline: none;
+  }

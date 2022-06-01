@@ -21,7 +21,7 @@ function deleteFromList(id) {
             break   
         }      
     }
-    tasks.splice(indexToDelete)
+    tasks.splice(indexToDelete,1)
     setList()
 }
 
@@ -29,7 +29,7 @@ function setList() {
     let innerHTML = ""
     for (let i=0;i<tasks.length;i++) {
         const task = tasks[i]
-        innerHTML += "<li id=" + task.id + ">" + task.text + "  <button onclick='deleteFromList("+task.id+")'> x </button> </li>"    
+        innerHTML += "<li id=" + task.id + ">" + task.text + "  <button onclick='deleteFromList("+task.id+")' class='delete-button'> x </button> </li>"    
     }
     
     list.innerHTML=innerHTML
