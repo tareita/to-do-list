@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: linear-gradient(120deg, rgb(250, 201, 209), rgb(175, 212, 239));
+    background-image: linear-gradient(120deg, rgb(147, 172, 233), rgb(242, 149, 167));
     color: white;
     font-family: 'Lato', sans-serif;
     min-height: 100vh;
@@ -25,6 +25,7 @@ header {
     margin-bottom: 10vh;
     font-size: 70px;
 }
+
 
 button {
     background-color: rgb(180, 125, 231);
@@ -49,6 +50,14 @@ button:hover {
     background-color: rgb(244, 154, 154);
 }
 
+.edit-button {
+    background-color: rgb(238, 166, 72);
+}
+
+.edit-button:hover{
+    background-color: rgb(246, 189, 142);
+}
+
 input[type=text]{
     background-color: honeydew;
     border-radius: 10px;
@@ -59,3 +68,7 @@ input[type=text]{
 input[type=text]:focus {
     outline: none;
   }
+
+li {
+    margin-bottom: 9px;
+}

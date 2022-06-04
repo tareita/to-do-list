@@ -49,7 +49,7 @@ function setList() {
     let innerHTML = ""
     for (let i=0;i<tasks.length;i++) {
         const task = tasks[i]
-        innerHTML += "<li id=" + task.id + ">" + task.text + "  <button onclick='deleteFromList("+task.id+")' class='delete-button'> x </button> <button onclick='toggleEdit("+task.id+")'> edit </button> "    
+        innerHTML += "<li id=" + task.id + ">" + task.text + "  <button onclick='deleteFromList("+task.id+")' class='delete-button'> x </button> <button onclick='toggleEdit("+task.id+")' class='edit-button'> edit </button> "    
         if (task.beingEdited){
             innerHTML += "<input type='text' id=" + 'input' + task.id+"> <button onclick='submitEdit("+task.id+")'> change </button>" 
         }
