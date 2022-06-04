@@ -12,15 +12,17 @@ function addToList() {
     setList()
 }
 
-function deleteFromList(id) { 
-    let indexToDelete 
+function getTaskIndexById(id) {
     for (let i=0;i<tasks.length;i++){
         const task = tasks[i]
         if (task.id == id) {
-            indexToDelete = i  
-            break   
-        }      
-    }
+            return i
+        }
+    }    
+}
+
+function deleteFromList(id) { 
+    let indexToDelete = getTaskIndexById(id)
     tasks.splice(indexToDelete,1)
     setList()
 }
@@ -28,19 +30,19 @@ function deleteFromList(id) {
 //update list - have a button for each item in the list that says update
 
 function toggleEdit(id) {
-    let indexToUpdate
-    for (let i=0;i<tasks.length;i++){
-        const task = tasks[i]
-        if (task.id == id) {
-            indexToUpdate = i  
-            break   
-        }      
-    }
-    beingEdited = true
+    let indexToUpdate = getTaskIndexById(id)
+    let task = tasks[indexToUpdate]
+    task.beingEdited = !task.beingEdited
     setList()
-    const newText = editTextField.value
-    tasks[indexToUpdate] = newText
-    //beingEdited = false
+}
+
+function submitEdit(id) {
+    let indexToUpdate = getTaskIndexById(id)
+    let textField = document.getElementById('input' + id)
+    let task = tasks[indexToUpdate]
+    task.text = textField.value
+    task.beingEdited = false
+    setList()
 }
 
 function setList() {
@@ -49,7 +51,7 @@ function setList() {
         const task = tasks[i]
         innerHTML += "<li id=" + task.id + ">" + task.text + "  <button onclick='deleteFromList("+task.id+")' class='delete-button'> x </button> <button onclick='toggleEdit("+task.id+")'> edit </button> "    
         if (task.beingEdited){
-            innerHTML += "<input type='text' id='editTextField'> <button> change </button>" 
+            innerHTML += "<input type='text' id=" + 'input' + task.id+"> <button onclick='submitEdit("+task.id+")'> change </button>" 
         }
         innerHTML += "</li>"
     }
