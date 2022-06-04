@@ -12,6 +12,13 @@ function addToList() {
     setList()
 }
 
+function onAddToList() {
+    if (event.key=="Enter") {
+        addToList()
+    }
+
+}
+
 function getTaskIndexById(id) {
     for (let i=0;i<tasks.length;i++){
         const task = tasks[i]
@@ -55,8 +62,14 @@ function setList() {
         }
         innerHTML += "</li>"
     }
-    
     list.innerHTML=innerHTML
+    localStorage.setItem("save",JSON.stringify(tasks))
+}
+
+console.log(localStorage.getItem("save"))
+if (localStorage.getItem("save")) {
+    tasks=JSON.parse(localStorage.getItem("save"))
+    setList()
 }
 
 
